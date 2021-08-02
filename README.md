@@ -14,7 +14,7 @@ Clone the repo from Command Line Tool using the below command
 > git clone
 Or
 Download the zip
-Navigate to the directory trello-board and run the following commands
+Navigate to the directory trello-board-master and run the following commands
 1. `npm install` - To download dependencies
 2. `npm start`   - To run the app. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
