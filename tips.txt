@@ -1,0 +1,5 @@
+ng generate module home --routing true
+ng generate component home/list/list-items
+ng add @ng-bootstrap/ng-bootstrap - This adds proper styles in angular.json and imports in modules.Files updated are package.json, src/app/app.module.ts, angular.json, src/polyfills.ts
+ng generate interface types/list
+we can genereate interface, and use it for our objects such that it will properly show errors during development. If we do this, we can avoid errors even invoking those props in template HTML too. For example if there is no property named ID, and if we invoke that property in HTML, it will show error.

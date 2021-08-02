@@ -1,6 +1,6 @@
 <div class="navHeader">
     <ul class="nav-pills nav-tabs nav">
-        <li class="nav-item" *ngFor="let tab of tabs">
+        <li class="nav-item" *ngFor="let tab of tabItems">
             <a class="nav-link" [routerLink]="tab.url" routerLinkActive="active">{{tab.name}}</a>
         </li>
     </ul>

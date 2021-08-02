@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title">{{viewData.isEdit ? 'Edit List': 'Add List'}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">x</button>
+</div>
+<form #itemForm="ngForm" (ngSubmit)="itemForm.form.valid && onSubmit()" novalidate>
+    <div class="modal-body">
+        <div class="form-group">
+            <label id="list_name_label">Name</label>
+            <input minlength="3" maxlength="100" class="form-control" placeholder="Enter List Name" min-length="1"
+                type="text" [(ngModel)]="formData.name" #listName="ngModel" name="list_name" required>
+            <div *ngIf="(listName.dirty || listName.touched || itemForm.submitted)">
+                <div class="text-danger" *ngIf="listName.errors?.required">
+                    Name is required
+                </div>
+                <div class="text-danger" *ngIf="listName.errors?.minlength">
+                    Length of name should be greater than 2
+                </div>
+                <div class="text-danger" *ngIf="listName.errors?.maxlength">
+                    Length of name should be less than 100
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-warning" *ngIf="!viewData.isEdit" type="button" (click)="deleteList()">Cancel</button>
+        <button class="btn btn-danger" *ngIf="viewData.isEdit" type="button"
+            (click)="deleteList(formData.id)">Delete</button>
+    </div>
+</form>
